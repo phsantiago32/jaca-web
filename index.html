@@ -36,6 +36,15 @@
 		.stone {
 			color: #3fc35f;
 		}
+		hr {
+			display: block;
+		    height: 1px;
+		    border: 0;
+		    border-top: 1px solid #ccc;
+		    margin: 1em 0;
+		    padding: 0; 
+			border-color: #33CC66;
+		}
 		.stone2 {
 			color: #33CC66;
 		}
@@ -61,13 +70,45 @@
 			
 			background-color: #33CC66;
 		}
+
+		.ngProgressLite {
+            pointer-events: none;
+        }
+        .promo-title {
+            font-size:16px !important;
+            line-height: 5px !important;
+            font-weight: 500 !important;
+        }
+        .promo-subtitle {
+            font-size:14px !important;
+        }
+        .ngProgressLiteBar {
+            background: #29d;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            height: 2px;
+        }
+        .ngProgressLite .ngProgressLiteBarShadow {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+            opacity: 1;
+            -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+        }
 	</style>
-    <body ng-app="jaca" class="v100">
+    <body ng-app="jaca" ng-controller="BaseController as vm" class="v100">
     	  <nav class="z-depth-1">
 		    <div class="nav-wrapper stone-bg">
 		      <a href="#" class="brand-logo left" style="padding-left: 10px">Logo</a>
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="sass.html">Sass</a></li>
+		        <li><a ui-sref="home">Home</a></li>
 		        <li><a href="badges.html">Components</a></li>
 		        <li><a href="collapsible.html">JavaScript</a></li>
 		      </ul>
@@ -100,8 +141,14 @@
 	    <script type="text/javascript" src="app/app.js"></script>
 	    <script type="text/javascript" src="app/config/jaca.config.js"></script>
 	    <script type="text/javascript" src="app/config/jaca.controllers.js"></script>
+
+	    <script type="text/javascript" src="app/controllers/base.controller.js"></script>
 	    <script type="text/javascript" src="app/controllers/home.controller.js"></script>
-	    <script type="text/javascript" src="app/controllers/auth.controller.js"></script>
+	    <script type="text/javascript" src="app/controllers/promo.list.controller.js"></script>
+	    <script type="text/javascript" src="app/controllers/promo.form.controller.js"></script>
+
+	    <script type="text/javascript" src="app/factory/merchant.factory.js"></script>
+	    <script type="text/javascript" src="app/factory/promo.factory.js"></script>
 
 	    <script type="text/javascript">
         new vUnit({
