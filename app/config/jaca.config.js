@@ -8,23 +8,32 @@
         config.$inject = ['$stateProvider', '$urlRouterProvider'];
         function config($stateProvider, $urlRouterProvider) {
             
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise('/');
 
             $stateProvider
-                .state('auth', {
-                    url: '/',
-                    templateUrl: 'views/auth.html',
-                    controller: "AuthController",
-                    controllerAs: "vm"
-                })
-
-                
+            
                 .state('home', {
                     url: '/home',
                     templateUrl: 'views/home.html',
-                    controller: "HomeController",
-                    controllerAs: "vm"
+                    controller: 'HomeController',
+                    controllerAs: 'vm'
                 })
+
+                .state('home.promos', {
+                    url: '/promotions',
+                    templateUrl: 'views/promo.list.html',
+                    controller: 'PromoController',
+                    controllerAs: 'vm'
+                })
+
+                .state('home.promo.detail', {
+                    url: '/promotion/:id',
+                    templateUrl: 'views/promo.list.html',
+                    controller: 'PromoListController',
+                    controllerAs: 'vm'
+                })
+
+                
                 /**
                 .state('home.divida', {
                     url: 'divida/:id',
