@@ -1,10 +1,9 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular
-    .module('app', ['ngRoute'])
-    .controller('HomeController', HomeController);
-
-function HomeController() {
-	var vm = this;
-	vm.test = "hugo";
-}
+    angular.module('jaca', [
+        'ui.router',
+        'jaca.controllers',
+        'ngAnimate'
+    ]);
+})();
