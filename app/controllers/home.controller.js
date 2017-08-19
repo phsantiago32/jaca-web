@@ -9,9 +9,7 @@
 	  	HomeController.$inject = ['servicoMerchant'];
 		function HomeController(servicoMerchant) {
 			var vm = this;
-			vm.test = "hugo";
-			vm.description = 'A Stone está pronta para levar o mercado de pagamento para lugares nunca antes vistos.'
-		
+			
 			getMerchants();
 
 			function getMerchants() {

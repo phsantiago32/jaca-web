@@ -24,7 +24,7 @@
 				   		</div>
 				   		<div class="col s12 center-align">
 				   		<button class="btn waves-effect waves-green stone-bg" type="submit" name="action">Buscar
-						    <i class="material-icons right">send</i>
+						    <i class="material-icons right">search</i>
 						</button>
 				   		</div>
 				    </div>
@@ -33,8 +33,8 @@
 				   		<div class="col s12 center-align">
 				   			<p class="stone"> Promoções
 					   			<ul class="collection">
+							      <li class="collection-item"><a ui-sref="home.promos" class="stone2">Listar</a></li>			   		
 							      <li class="collection-item"><a ui-sref="home.promo" class="stone2">Cadastrar</a></li>
-							      <li class="collection-item"><a ui-sref="home.promos" class="stone2">Listar</a></li>
 							    </ul>
 							</p>
 				   		</div>
@@ -46,7 +46,6 @@
 
     	</div>
     	<div class="col s12 m8 l9 v100"> 
-    		{{vm.merchantName}}
     		<ui-view></ui-view>
     		
   		</div>

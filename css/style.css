@@ -1,0 +1,96 @@
+ * {
+		  margin: 0;
+		  padding: 0;
+		}
+	    .v100 {
+	    	height: 100vh;
+		}
+		.v80 {
+		    height: 80vh;
+		}
+		.v50 {
+		    height: 50vh;
+		}
+		section {
+		    display: table;
+		    width: 100%;
+		}
+		.container-wide {
+		    padding: 0 2em;
+		}
+		.stone-bg {
+			background-color:#3fc35f;
+		}
+		.stone {
+			color: #3fc35f;
+		}
+		hr {
+			display: block;
+		    height: 1px;
+		    border: 0;
+		    border-top: 1px solid #ccc;
+		    margin: 1em 0;
+		    padding: 0; 
+			border-color: #33CC66;
+		}
+		.stone2 {
+			color: #33CC66;
+		}
+		.left-menu {
+			background: #f5f6f8;
+			border-right: 1px solid #dcdddf;
+		}
+		.input-field input[type=text]:focus {
+		    border-bottom: 1px solid #3fc35f !important;
+		    box-shadow: 0 1px 0 0 #3fc35f !important;
+		}
+		.input-field textarea:focus {
+		    border-bottom: 1px solid #3fc35f !important;
+		    box-shadow: 0 1px 0 0 #3fc35f !important;
+		}
+		.active {
+	    	color: #3fc35f !important;
+		}
+		.btn {
+			background-color: #3fc35f !important;
+		}
+		.btn:hover:before {
+			background-color: #33CC66;
+		
+		}
+		.btn:hover:after {
+			
+			background-color: #33CC66;
+		}
+
+		.ngProgressLite {
+            pointer-events: none;
+        }
+        .promo-title {
+            font-size:16px !important;
+            line-height: 5px !important;
+            font-weight: 500 !important;
+        }
+        .promo-subtitle {
+            font-size:14px !important;
+        }
+        .ngProgressLiteBar {
+            background: #29d;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            height: 2px;
+        }
+        .ngProgressLite .ngProgressLiteBarShadow {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+            opacity: 1;
+            -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+        }
