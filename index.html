@@ -1,117 +1,141 @@
- <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<!DOCTYPE html>
+<html>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <style>
-	    * {
-		  margin: 0;
-		  padding: 0;
-		}
-	    .v100 {
-	    	height: 100vh;
-		}
-		.v80 {
-		    height: 80vh;
-		}
-		.v50 {
-		    height: 50vh;
-		}
-		section {
-		    display: table;
-		    width: 100%;
-		}
-		.container-wide {
-		    padding: 0 2em;
-		}
-		.stone-bg {
-			background-color:#3fc35f;
-		}
-		.stone {
-			color: #3fc35f;
-		}
-		.stone2 {
-			color: #33CC66;
-		}
-		.left-menu {
-			background: #f5f6f8;
-			border-right: 1px solid #dcdddf;
-		}
-		.input-field input[type=text]:focus {
-		     border-bottom: 1px solid #3fc35f !important;
-		     box-shadow: 0 1px 0 0 #3fc35f !important;
-		   }
-		.active {
-	    	color: #3fc35f !important;
-		}
-		.btn {
-			background-color: #3fc35f !important;
-		}
-		.btn:hover:before {
-			background-color: #33CC66;
-		
-		}
-		.btn:hover:after {
-			
-			background-color: #33CC66;
-		}
-	</style>
-    <body ng-app="jaca" class="v100">
-    	  <nav class="z-depth-1">
-		    <div class="nav-wrapper stone-bg">
-		      <a href="#" class="brand-logo left" style="padding-left: 10px">Logo</a>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="sass.html">Sass</a></li>
-		        <li><a href="badges.html">Components</a></li>
-		        <li><a href="collapsible.html">JavaScript</a></li>
-		      </ul>
-		    </div>
-		  </nav>
-		  <br>
-		  <ui-view></ui-view>
-	      <footer class="page-footer stone-bg">
-	        <div class="container">
-	        	<div class="row">
-		            <div class="col s12">
-		              <h5 class="white-text"><img src="http://www.stone.com.br/images/footer-logo.png"></h5>
-		              <p class="grey-text text-lighten-4">{{vm.description}}</p>
-		            </div>	         
-	       		</div>
-		        <div class="footer-copyright">
-		        	<div class="container">
-		            © 2017 Made with <span style="color:#76ff03;">❤</span> by Stone CO
-		        	</div>
-		    	</div>
-	        </div>
-	      </footer>
-	    <!--Import jQuery before materialize.js-->
-	    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	    <script type="text/javascript" src="js/materialize.min.js"></script>
-	    <script type="text/javascript" src="js/angular.min.js"></script>
-	    <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
-	    <script type="text/javascript" src="js/angular-animate.js"></script>
+<head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	    <script type="text/javascript" src="app/app.js"></script>
-	    <script type="text/javascript" src="app/config/jaca.config.js"></script>
-	    <script type="text/javascript" src="app/config/jaca.controllers.js"></script>
-	    <script type="text/javascript" src="app/controllers/home.controller.js"></script>
-	    <script type="text/javascript" src="app/controllers/auth.controller.js"></script>
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-	    <script type="text/javascript">
-        new vUnit({
-            CSSMap: {
-                '.v': {
-                    property: 'height',
-                    reference: 'vh'
-                }
-            }
-        }).init();
-      </script>
-    </body>
-  </html>
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" media="screen,projection"
+	/>
+
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	.v100 {
+		height: 100vh;
+	}
+
+	.v80 {
+		height: 80vh;
+	}
+
+	.v50 {
+		height: 50vh;
+	}
+
+	section {
+		display: table;
+		width: 100%;
+	}
+
+	.container-wide {
+		padding: 0 2em;
+	}
+
+	.stone-bg {
+		background-color: #3fc35f;
+	}
+
+	.stone {
+		color: #3fc35f;
+	}
+
+	.stone2 {
+		color: #33CC66;
+	}
+
+	.left-menu {
+		background: #f5f6f8;
+		border-right: 1px solid #dcdddf;
+	}
+
+	.input-field input[type=text]:focus {
+		border-bottom: 1px solid #3fc35f !important;
+		box-shadow: 0 1px 0 0 #3fc35f !important;
+	}
+
+	.active {
+		color: #3fc35f !important;
+	}
+
+	.btn {
+		background-color: #3fc35f !important;
+	}
+
+	.btn:hover:before {
+		background-color: #33CC66;
+	}
+
+	.btn:hover:after {
+
+		background-color: #33CC66;
+	}
+</style>
+
+<body ng-app="jaca" class="v100">
+	<nav class="z-depth-1">
+		<div class="nav-wrapper stone-bg">
+			<a href="#" class="brand-logo left" style="padding-left: 10px">Logo</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="sass.html">Sass</a></li>
+				<li><a href="badges.html">Components</a></li>
+				<li><a href="collapsible.html">JavaScript</a></li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<ui-view></ui-view>
+	<footer class="page-footer stone-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<h5 class="white-text"><img src="http://www.stone.com.br/images/footer-logo.png"></h5>
+					<p class="grey-text text-lighten-4">{{vm.description}}</p>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					© 2017 Made with <span style="color:#76ff03;">❤</span> by Stone CO
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="js/angular-animate.js"></script>
+
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/config/jaca.config.js"></script>
+	<script type="text/javascript" src="app/config/jaca.controllers.js"></script>
+	<script type="text/javascript" src="app/controllers/home.controller.js"></script>
+	<script type="text/javascript" src="app/controllers/auth.controller.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/cep-promise@2.0.3/dist/cep-promise-browser.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5uIpqbPprEyNYtwi4s92rYA2C7gs78kM&callback=initMap">
+
+	</script>
+	<script type="text/javascript">
+		new vUnit({
+			CSSMap: {
+				'.v': {
+					property: 'height',
+					reference: 'vh'
+				}
+			}
+		}).init();
+	</script>
+</body>
+
+</html>

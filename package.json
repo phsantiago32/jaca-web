@@ -13,5 +13,7 @@
     "connect-history-api-fallback": "^1.3.0",
     "gulp": "^3.9.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cep-promise": "^2.0.5"
+  }
 }
