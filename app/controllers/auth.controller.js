@@ -36,7 +36,7 @@
         $scope.DoLogin = function () {
             //TODO -> fazer chamada ajax para o login;
             $http({
-                url: vm.AUTH_ENDPOINT,
+                url: vm.AUTH_ENDPOINT + "/" + vm.username +"/" + vm.password,
                 method: "GET",
                 data: {}
             }).then(function successCallback(response) {
@@ -138,7 +138,8 @@
                 data: requestData
 
             }).then(function successCallback(response) {
-                vm.Back();
+                //vm.Back();
+                alert('cadastrado com sucesso');
             }, function errorCallback(response) {
                 $scope.error = response.statusText;
                 console.log(response);
