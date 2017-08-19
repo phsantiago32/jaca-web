@@ -5,104 +5,11 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-    <style>
-	    * {
-		  margin: 0;
-		  padding: 0;
-		}
-	    .v100 {
-	    	height: 100vh;
-		}
-		.v80 {
-		    height: 80vh;
-		}
-		.v50 {
-		    height: 50vh;
-		}
-		section {
-		    display: table;
-		    width: 100%;
-		}
-		.container-wide {
-		    padding: 0 2em;
-		}
-		.stone-bg {
-			background-color:#3fc35f;
-		}
-		.stone {
-			color: #3fc35f;
-		}
-		hr {
-			display: block;
-		    height: 1px;
-		    border: 0;
-		    border-top: 1px solid #ccc;
-		    margin: 1em 0;
-		    padding: 0; 
-			border-color: #33CC66;
-		}
-		.stone2 {
-			color: #33CC66;
-		}
-		.left-menu {
-			background: #f5f6f8;
-			border-right: 1px solid #dcdddf;
-		}
-		.input-field input[type=text]:focus {
-		     border-bottom: 1px solid #3fc35f !important;
-		     box-shadow: 0 1px 0 0 #3fc35f !important;
-		   }
-		.active {
-	    	color: #3fc35f !important;
-		}
-		.btn {
-			background-color: #3fc35f !important;
-		}
-		.btn:hover:before {
-			background-color: #33CC66;
-		
-		}
-		.btn:hover:after {
-			
-			background-color: #33CC66;
-		}
-
-		.ngProgressLite {
-            pointer-events: none;
-        }
-        .promo-title {
-            font-size:16px !important;
-            line-height: 5px !important;
-            font-weight: 500 !important;
-        }
-        .promo-subtitle {
-            font-size:14px !important;
-        }
-        .ngProgressLiteBar {
-            background: #29d;
-            position: fixed;
-            z-index: 99999;
-            top: 0;
-            left: 0;
-            height: 2px;
-        }
-        .ngProgressLite .ngProgressLiteBarShadow {
-            display: block;
-            position: absolute;
-            right: 0px;
-            width: 100px;
-            height: 100%;
-            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-            opacity: 1;
-            -webkit-transform: rotate(3deg) translate(0px, -4px);
-            -ms-transform: rotate(3deg) translate(0px, -4px);
-            transform: rotate(3deg) translate(0px, -4px);
-        }
-	</style>
     <body ng-app="jaca" ng-controller="BaseController as vm" class="v100">
     	  <nav class="z-depth-1">
 		    <div class="nav-wrapper stone-bg">
@@ -134,6 +41,8 @@
 	    <!--Import jQuery before materialize.js-->
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	    <script type="text/javascript" src="js/materialize.min.js"></script>
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5uIpqbPprEyNYtwi4s92rYA2C7gs78kM&callback=initMap"></script>
+	    <script type="text/javascript" src="https://unpkg.com/cep-promise@2.0.3/dist/cep-promise-browser.min.js"></script>
 	    <script type="text/javascript" src="js/angular.min.js"></script>
 	    <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
 	    <script type="text/javascript" src="js/angular-animate.js"></script>
@@ -145,11 +54,10 @@
 	    <script type="text/javascript" src="app/controllers/base.controller.js"></script>
 	    <script type="text/javascript" src="app/controllers/home.controller.js"></script>
 	    <script type="text/javascript" src="app/controllers/promo.list.controller.js"></script>
-	    <script type="text/javascript" src="app/controllers/promo.form.controller.js"></script>
-      
-      <script type="text/javascript" src="app/controllers/auth.controller.js"></script>
-	    <script type="text/javascript" src="https://unpkg.com/cep-promise@2.0.3/dist/cep-promise-browser.min.js"></script>
-	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5uIpqbPprEyNYtwi4s92rYA2C7gs78kM&callback=initMap">
+	    <script type="text/javascript" src="app/controllers/promo.form.controller.js"></script>      
+      	<script type="text/javascript" src="app/controllers/auth.controller.js"></script>
+	    
+	    
 
 	    <script type="text/javascript" src="app/factory/merchant.factory.js"></script>
 	    <script type="text/javascript" src="app/factory/promo.factory.js"></script>

@@ -22,14 +22,21 @@
                 .state('home.promos', {
                     url: '/promotions',
                     templateUrl: 'views/promo.list.html',
-                    controller: 'PromoController',
+                    controller: 'PromoListController',
+                    controllerAs: 'vm'
+                })
+
+                .state('home.promo', {
+                    url: '/form',
+                    templateUrl: 'views/promo.form.html',
+                    controller: 'PromoFormController',
                     controllerAs: 'vm'
                 })
 
                 .state('home.promo.detail', {
                     url: '/promotion/:id',
                     templateUrl: 'views/promo.list.html',
-                    controller: 'PromoListController',
+                    controller: 'PromoController',
                     controllerAs: 'vm'
                 })
 

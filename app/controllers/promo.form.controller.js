@@ -4,11 +4,11 @@
 
 	angular
 	    .module('jaca.controllers')
-	  	.controller('PromoController', PromoController);
+	  	.controller('PromoFormController', PromoFormController);
 
-		function PromoController() {
+		function PromoFormController() {
 			var vm = this;
-			vm.title = "Lista de Promoções";
+			vm.title = "Cadastrar Promoção";
 		}
 
 })();

@@ -10,13 +10,13 @@
 
 		function PromoListController(servicoPromotion) {
 			var vm = this;
-			vm.test = "hugo";
+			vm.title = "Promoções";
 
 			get();
 
 			function get(id) {
 	            servicoPromotion.get(id).then(function (res) {
-	                vm.promotions = res.data.SuccessBody.Name;
+	                vm.promotions = res.data.SuccessBody;
 	            });
 	        }
 		}
