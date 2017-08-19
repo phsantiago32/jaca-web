@@ -6,7 +6,7 @@
         .module('jaca.controllers')
         .controller('AuthController', AuthController);
 
-    function AuthController($scope, $http) {
+    function AuthController($scope, $http, $location) {
         var vm = this;
         vm.username,
             vm.password,
@@ -45,7 +45,7 @@
                 }
 
                 if(response.data.StatusCode == 200){
-                    alert('LOGADO');
+                    $location.path = '/home';
                 }
             }, function errorCallback(response) {
                 $scope.error = response.statusText;
@@ -91,16 +91,15 @@
         }
 
         vm.RecoverPassword = function () {
+            alert('a');
             $http({
-                url: "http://example.appspot.com/rest/app",
+                url: vm.AUTH_ENDPOINT + "/recover/" + vm.login,
                 method: "GET",
                 data: {}
             }).then(function successCallback(response) {
-                $scope.data = response.data;
-                console.log('sucesso');
+                alert('sucesso');
             }, function errorCallback(response) {
-                $scope.error = response.statusText;
-                console.log('erro');
+                alert('erro');
             });
         }
 

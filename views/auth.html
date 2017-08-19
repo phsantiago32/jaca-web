@@ -55,8 +55,8 @@
                     <div class="row margin">
                         <div class="input-field col s12">
                             <i class="mdi-social-person-outline prefix"></i>
-                            <input id="useremail" type="text" ng-model="vm.userEmail">
-                            <label for="useremail" class="center-align">Email</label>
+                            <input id="useremail" type="text" ng-model="vm.login">
+                            <label for="useremail" class="center-align">Login</label>
                         </div>
                     </div>
                     <div class="row">
@@ -70,7 +70,7 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <a ng-click="RecoverPassword()" class="btn waves-effect waves-light col s12">Login</a>
+                            <a ng-click="vm.RecoverPassword()" class="btn waves-effect waves-light col s12">Recuperar Senha</a>
                         </div>
                     </div>
                 </form>
