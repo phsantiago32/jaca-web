@@ -33,7 +33,13 @@
                     controllerAs: 'vm'
                 })
 
-                
+                .state('auth', {
+                    url: '/auth',
+                    templateUrl: 'views/auth.html',
+                    controller: 'AuthController',
+                    controllerAs: 'vm'
+                })
+
                 /**
                 .state('home.divida', {
                     url: 'divida/:id',
