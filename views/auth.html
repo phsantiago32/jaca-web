@@ -1,7 +1,8 @@
-    <div class="row">
-        <div id="login-page" class="col s6 center-align">
-            <div class="col s12 z-depth-4 card-panel">
-                <form class="login-form animated fadeIn" ng-show="vm.ShouldDisplayLoginForm">
+<div class="row">
+    <div id="login-page" class="col s6 center-align">
+        <div class="col s12 z-depth-4 card-panel">
+            <div ng-show="vm.ShouldDisplayLoginForm">
+                <form class="login-form animated fadeIn">
                     <div class="row">
                         <div class="input-field col s12 center">
                             <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
@@ -26,6 +27,7 @@
                         <div class="input-field col s12">
                             <a ng-click="DoLogin()" class="btn waves-effect waves-light col s12">Login</a>
                         </div>
+                        
                     </div>
                     <div class="row">
                         <div class="input-field col s6 m6 l6">
@@ -37,77 +39,131 @@
                     </div>
 
                 </form>
+            </div>
 
 
 
-                <div class="animated fadeIn">
-                    <form class="recoveryPassword-form animated fadeIn" ng-show="vm.ShouldDisplayRecoveryPassword">
-                        <div class="row">
-                            <div class="input-field col s12 center">
-                                <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-                                <p class="center login-form-text">Recuperar senha</p>
-                            </div>
+
+            <div ng-show="vm.ShouldDisplayRecoveryPassword">
+                <form class="recoveryPassword-form animated fadeIn">
+                    <div class="row">
+                        <div class="input-field col s12 center">
+                            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+                            <p class="center login-form-text">Recuperar senha</p>
                         </div>
-                        <div class="row margin">
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="useremail" type="text" ng-model="vm.userEmail">
+                            <label for="useremail" class="center-align">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin medium-small"><a ng-click="Back()">{{vm.footerLeftText}}</a></p>
+                        </div>
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin right-align medium-small"><a>{{vm.footerRightText}}</a></p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a ng-click="RecoverPassword()" class="btn waves-effect waves-light col s12">Login</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div ng-show="vm.ShouldDisplayRegisterUser">
+                <form class="register-new-user-form animated fadeIn">
+                    <div class="row">
+                        <div class="input-field col s12 center">
+                            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+                            <p class="center login-form-text">Criar novo usuário</p>
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="merchantName" type="text" ng-model="vm.merchantName">
+                            <label for="merchantName" class="center-align">Razão Social</label>
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="merchantCep" type="text" ng-model="vm.merchantCep" ng-change="vm.SearchCepWhenHasNineDigits()" maxlength="9">
+                            <label for="merchantCep" class="center-align">Cep</label>
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="fullAddress" disabled type="text" ng-model="vm.fullAddress" ng-show="vm.ShoudDisplayFullAddress" maxlength="9">
+                            <label for="fullAddress" class="center-align"></label>
+                        </div>
+                    </div>
+                    <div class="row margin" ng-show="vm.ShoudDisplayFullAddress">
+                        <div class="input-field col s4">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="addressNumber" type="text" ng-model="vm.addressNumber" maxlength="9">
+                            <label for="addressNumber" class="center-align">Numero</label>
+                        </div>
+
+                        <div class="input-field col s8" ng-show="vm.ShoudDisplayFullAddress">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="complement" type="text" ng-model="vm.complement">
+                            <label for="complement" class="center-align">Complemento</label>
+                        </div>
+                    </div>
+                    <div class="row margin" ng-show="vm.ShoudDisplayFullAddress">
+
+                        <div class="row margin" ng-show="vm.ShoudDisplayFullAddress">
                             <div class="input-field col s12">
                                 <i class="mdi-social-person-outline prefix"></i>
-                                <input id="useremail" type="text" ng-model="vm.useremail">
+                                <input id="useremail" type="text" ng-model="vm.userEmail">
                                 <label for="useremail" class="center-align">Email</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6 m6 l6">
-                                <p class="margin medium-small"><a ng-click="Back()">{{vm.footerLeftText}}</a></p>
-                            </div>
-                            <div class="input-field col s6 m6 l6">
-                                <p class="margin right-align medium-small"><a>{{vm.footerRightText}}</a></p>
-                            </div>
-                        </div>
-                            
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <a ng-click="RecoverPassword()" class="btn waves-effect waves-light col s12">Login</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
 
-                <div class="animated fadeIn" ng-show="vm.ShouldDisplayRegisterUser">
-                    <form class="register-new-user-form">
-                        <div class="row">
-                            <div class="input-field col s12 center">
-                                <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-                                <p class="center login-form-text">Criar novo usuário</p>
-                            </div>
-                        </div>
-                        <div class="row margin">
+                        <div class="row margin" ng-show="vm.ShoudDisplayFullAddress">
                             <div class="input-field col s12">
                                 <i class="mdi-social-person-outline prefix"></i>
-                                <input id="merchantName" type="text" ng-model="vm.merchantName">
-                                <label for="merchantName" class="center-align">Razão Social</label>
+                                <input id="userLogin" type="text" ng-model="vm.login">
+                                <label for="userLogin" class="center-align">Login</label>
                             </div>
                         </div>
-                        <div class="row margin">
-                            <div class="input-field col s12">
-                                <i class="mdi-social-person-outline prefix"></i>
-                                <input id="merchantCep" type="text" ng-model="vm.merchantCep" ng-Keypress="CepFocusOut" maxlength="9">
-                                <label for="merchantCep" class="center-align">Cep</label>
-                            </div>
+
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input id="password" type="password" ng-model="vm.password">
+                            <label for="password" class="center-align">Senha</label>
                         </div>
+
+
                         <div class="row">
-                            <div class="input-field col s6 m6 l6">
-                                <p class="margin medium-small"><a ng-click="Back()">{{vm.footerLeftText}}</a></p>
-                            </div>
-                            <div class="input-field col s6 m6 l6">
-                                <p class="margin right-align medium-small"><a>{{vm.footerRightText}}</a></p>
+                            <div class="input-field col s12">
+                                <a ng-click="vm.SendNewUser()" class="btn waves-effect waves-light col s12">Cadastrar</a>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
 
-
-
-
+                    <div class="row">
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin medium-small"><a ng-click="Back()">{{vm.footerLeftText}}</a></p>
+                        </div>
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin right-align medium-small"><a>{{vm.footerRightText}}</a></p>
+                        </div>
+                    </div>
+                </form>
             </div>
+
+            
+
+
         </div>
     </div>
+</div>
