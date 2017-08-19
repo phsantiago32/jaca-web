@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body ng-app="app" ng-controller="HomeController as vm">
+    	  <nav class="green darken-4">
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo left" style="padding-left: 10px">Logo</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="sass.html">Sass</a></li>
+		        <li><a href="badges.html">Components</a></li>
+		        <li><a href="collapsible.html">JavaScript</a></li>
+		      </ul>
+		    </div>
+		  </nav>
+		   <div class="row">
+
+      <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+
+              This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+
+      </div>
+
+      <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <!-- Teal page content
+
+              This content will be:
+          9-columns-wide on large screens,
+          8-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+
+      </div>
+
+    </div>
+          
+    	{{vm.test}}
+
+	    <!--Import jQuery before materialize.js-->
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	    <script type="text/javascript" src="js/materialize.min.js"></script>
+	    <script type="text/javascript" src="js/angular.min.js"></script>
+	    <script type="text/javascript" src="js/ng-route.js"></script>
+	    <script type="text/javascript" src="app/app.js"></script>
+
+    </body>
+  </html>
