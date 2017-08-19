@@ -5,7 +5,7 @@
     angular
         .module('jaca.controllers')
         .controller('AuthController', AuthController);
-
+        
         function AuthController($scope, $http) {
             var vm = this;
                 vm.username,
