@@ -6,7 +6,7 @@
 	    .module('jaca.controllers')
 	  	.controller('PromoListController', PromoListController);
 
-	  	PromoListController.$inject = ['servicoPromotion'];
+	  	PromoListController.$inject = ['servicoPromotion'];	
 
 		function PromoListController(servicoPromotion) {
 			var vm = this;

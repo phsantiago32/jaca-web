@@ -104,7 +104,7 @@
         }
 
         vm.SearchCepWhenHasNineDigits = function () {
-            if (vm.merchantCep.length !== 9) { return; }
+
             cep(vm.merchantCep)
                 .then(function (response) {
                     vm.ShoudDisplayFullAddress = true;

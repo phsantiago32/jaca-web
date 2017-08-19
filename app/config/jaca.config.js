@@ -16,7 +16,14 @@
                     url: '/home',
                     templateUrl: 'views/home.html',
                     controller: 'HomeController',
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                })
+
+                .state('home.resume', {
+                    url: '/resume',
+                    templateUrl: 'views/resume.html',
+                    controller: 'ResumeController',
+                    controllerAs: 'vm',
                 })
 
                 .state('home.promos', {
@@ -41,7 +48,7 @@
                 })
 
                 .state('auth', {
-                    url: '/auth',
+                    url: '/',
                     templateUrl: 'views/auth.html',
                     controller: 'AuthController',
                     controllerAs: 'vm'
