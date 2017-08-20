@@ -1,35 +1,37 @@
-<div class="row">
-	<div class="col s12">
-		<h5 class="center-align stone">{{vm.title}}</h5>
-		<hr>
-	<br>
-	</div>
+<div class="row" ng-style="{opacity: vm.show}">
+	<div ng-show="vm.show">
+		<div class="col s12">
+			<h5 class="center-align stone">{{vm.title}}</h5>
+			<hr>
+		<br>
+		</div>
 
-    <div id="login-page" class="col s12">
-        <div class="col s12 z-depth-1 card-panel center-align" style="padding:20px;">
-	        <div>
-	            <form class="login-form">
-	                <div class="row margin">
-	                    <div class="input-field col s12">
-	                        <input id="nome" type="text" ng-model="vm.name">
-	                        <label for="nome" class="center-align">Título</label>
-	                    </div>
-	                </div>
-	                <div class="row margin">
-	                    <div class="input-field col s12">
-	                        <textarea id="textarea1" class="materialize-textarea" ng-model="vm.description"></textarea>
-          					<label for="textarea1">Descrição</label>
-	                    </div>
-	                </div>
-	                <div class="row ">
-	                    <div class="input-field col s12 center-align">
-	                        <a ng-click="DoPromotion()" class="btn waves-effect waves-light">
-		                        Cadastrar
-	                        <i class="material-icons right">send</i></a>
-	                    </div>	                    
-	                </div>	 
-	            </form>               
-	        </div>
+	    <div id="login-page" class="col s12">
+	        <div class="col s12 z-depth-1 card-panel center-align" style="padding:20px;">
+		        <div>
+		            <form class="login-form">
+		                <div class="row margin">
+		                    <div class="input-field col s12">
+		                        <input id="nome" type="text" ng-model="vm.name">
+		                        <label for="nome" class="center-align">Título</label>
+		                    </div>
+		                </div>
+		                <div class="row margin">
+		                    <div class="input-field col s12">
+		                        <textarea id="textarea1" class="materialize-textarea" ng-model="vm.description"></textarea>
+	          					<label for="textarea1">Descrição</label>
+		                    </div>
+		                </div>
+		                <div class="row ">
+		                    <div class="input-field col s12 center-align">
+		                        <a ng-click="DoPromotion()" class="btn waves-effect waves-light">
+			                        Cadastrar
+		                        <i class="material-icons right">send</i></a>
+		                    </div>	                    
+		                </div>	 
+		            </form>               
+		        </div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -6,12 +6,18 @@
 	    .module('jaca.controllers')
 	  	.controller('PromoListController', PromoListController);
 
-	  	PromoListController.$inject = ['servicoPromotion', '$stateParams', '$scope', '$state'];	
-
-		function PromoListController(servicoPromotion, $stateParams, $scope, $state) {
+		function PromoListController(servicoPromotion, $stateParams, $scope, $state, ngProgressLite, $timeout, toastr) {
 			var vm = this;
 			vm.title = "Promoções";
 			vm.MerchantId = $stateParams.Id;
+
+
+            vm.show = 0;
+	        ngProgressLite.start();
+	        $timeout(function () {
+	            ngProgressLite.done();
+	            vm.show = 1;
+	        }, 350);
 
 			get();
 
@@ -23,6 +29,7 @@
 
 	        $scope.delPromotion = function (id) {
 	            servicoPromotion.delPromotion(id).then(function (res) {
+	            	toastr.success('Promoção excluída!');
 	            	$state.transitionTo($state.current, $stateParams, {
 					    reload: true,
 					    inherit: false,

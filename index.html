@@ -4,14 +4,42 @@
       <base href="/">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style>
+        .ngProgressLite {
+            pointer-events: none;
+        }
+        .ngProgressLiteBar {
+            background: red;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            height: 4px;
+        }
+        .ngProgressLite .ngProgressLiteBarShadow {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+            opacity: 1;
+            -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+        }
+    </style>
+
     </head>
     <body ng-app="jaca" ng-controller="BaseController as vm" class="v100">
+
     	  <nav class="z-depth-1">
 		    <div class="nav-wrapper stone-bg">
 		      <a href="#" class="brand-logo left" style="padding-left: 10px">fideli<span style="color:#575757;">S</span>tone</a>
@@ -43,6 +71,10 @@
 	    <script type="text/javascript" src="js/angular.min.js"></script>
 	    <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
 	    <script type="text/javascript" src="js/angular-animate.js"></script>
+
+	    <script type="text/javascript" src="js/angular-sanitize.min.js"></script>
+    	<script type="text/javascript" src="js/ngprogress-lite.min.js"></script>
+    	<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
 	    <script type="text/javascript" src="app/app.js"></script>
 	    <script type="text/javascript" src="app/config/jaca.config.js"></script>
