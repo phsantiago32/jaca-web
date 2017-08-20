@@ -11,10 +11,14 @@
 	<br>
 	</div>
     <div class="col s12">
-    	<div class="card" style="padding: 10px;" ng-repeat="list in vm.list">
+    	<div class="card" style="padding: 10px;" ng-repeat="list in vm.list" ng-if="list.PromoName != null">
     		<p class="stone center-align" style="padding: 10px;">{{list.PromoName}}</p>
 	        <div class="collection">
-			    <a class="collection-item" style="color: #33CC66 !important" ng-repeat="sales in list.Sales"><span class="badge">{{sales.SaleAmount}}</span>{{sales.CustomerName}}</a>
+			    <a class="collection-item" style="color: #33CC66 !important" ng-repeat="sales in list.Sales">
+			    <div ng-if="sales.CustomerName != null">
+			    	<span class="badge">{{sales.SaleAmount}}</span>{{sales.CustomerName}}
+			    </div>
+			    </a>
 			</div>
 		</div>
 	</div>
