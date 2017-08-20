@@ -5,8 +5,9 @@
         .module('jaca')
         .config(config);
 
-        config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
-        function config($stateProvider, $urlRouterProvider, $locationProvider) {
+        config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', 'ngProgressLiteProvider'];
+        function config($stateProvider, $urlRouterProvider, $locationProvider, ngProgressLiteProvider) {
+            ngProgressLiteProvider.settings.ease = 'ease-in';
             $locationProvider.html5Mode({
               enabled: true,
               requireBase: false

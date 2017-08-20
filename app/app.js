@@ -4,6 +4,10 @@
     angular.module('jaca', [
         'ui.router',
         'jaca.controllers',
-        'ngAnimate'
+        'ngAnimate',
+
+        /* Modulos Externos */
+        'ngProgressLite',
+        'toastr'
     ]);
 })();

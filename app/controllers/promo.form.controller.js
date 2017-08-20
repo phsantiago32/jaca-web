@@ -6,7 +6,7 @@
 	    .module('jaca.controllers')
 	  	.controller('PromoFormController', PromoFormController);
 
-		function PromoFormController($scope, $state, servicoPromotion, $stateParams) {
+		function PromoFormController($scope, $state, servicoPromotion, $stateParams, ngProgressLite, $timeout, toastr) {
 			var vm = this;
 			vm.title = "Cadastrar Promoção";
 
@@ -15,10 +15,16 @@
 			vm.name,
             vm.description = "";
 
+
+            vm.show = 0;
+	        ngProgressLite.start();
+	        $timeout(function () {
+	            ngProgressLite.done();
+	            vm.show = 1;
+	        }, 350);
             
 
             $scope.DoPromotion = function () {
-            	console.log(Object.keys($stateParams))
             	var data = {
 	            	"Name": vm.name,
 	            	"Description": vm.description,
@@ -26,6 +32,7 @@
 	            }
 
 	            servicoPromotion.setPromotion(data).then(function (res) {
+	            	toastr.success('Promoção cadastrada!');
 	                $state.go('home.promos', {Id: merchantId});
 	            });
             }

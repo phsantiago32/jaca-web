@@ -6,7 +6,7 @@
         .module('jaca.controllers')
         .controller('AuthController', AuthController);
 
-    function AuthController($scope, $http, $location, $state) {
+    function AuthController($scope, $http, $location, $state, toastr) {
         var vm = this;
         vm.username,
             vm.password,
@@ -136,7 +136,7 @@
                 data: requestData
             }).then(function successCallback(response) {
                 //vm.Back();
-                console.log(response.data.SuccessBody.Id);
+                toastr.success('Loja cadastrada!');
                 $state.go('home', {"Id": response.data.SuccessBody.Id});
             }, function errorCallback(response) {
                 $scope.error = response.statusText;
