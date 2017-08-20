@@ -8,14 +8,14 @@
 
     servicoMerchant.$inject = ['$http'];
     function servicoMerchant($http) {
-
+        var BASE_URL = "http://94891fc8.ngrok.io/"
         var factory = {
             getMerchant: getMerchant,
             setMerchant: setMerchant
         }
 
         function getMerchant(id) {
-            return $http.get('http://d8088e2e.ngrok.io/merchants/' + id);
+            return $http.get(BASE_URL + 'merchants/' + id);
         }
 
         function setMerchant(data) {

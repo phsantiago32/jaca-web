@@ -6,7 +6,7 @@
         .module('jaca.controllers')
         .controller('AuthController', AuthController);
 
-    function AuthController($scope, $http, $location) {
+    function AuthController($scope, $http, $location, $state) {
         var vm = this;
         vm.username,
             vm.password,
@@ -23,7 +23,7 @@
             vm.fullAddress = "";
 
 
-        vm.BASE_URL = "http://localhost:54621/";
+        var BASE_URL = "http://94891fc8.ngrok.io";
         vm.MERCHANT_ENDPOINT = vm.BASE_URL + "merchants";
         vm.AUTH_ENDPOINT = vm.BASE_URL + "auth";
         
@@ -32,24 +32,24 @@
         vm.ShouldDisplayRegisterUser = false;
         vm.ShoudDisplayFullAddress = false;
 
+        vm.errorLogin = false;
 
         $scope.DoLogin = function () {
             //TODO -> fazer chamada ajax para o login;
             $http({
-                url: vm.AUTH_ENDPOINT + "/" + vm.username +"/" + vm.password,
-                method: "GET",
-                data: {}
+                url: BASE_URL + "/auth/" + vm.username + "/" + vm.password,
+                method: "GET"
             }).then(function successCallback(response) {
                 if(response.data.StatusCode == 404){
-                    alert('usuário não encontrado');
+                    vm.errorLogin = true;
                 }
 
                 if(response.data.StatusCode == 200){
-                    $location.path = '/home';
+                    $state.go('home', {"Id": response.data.SuccessBody.MerchantId});
                 }
             }, function errorCallback(response) {
                 $scope.error = response.statusText;
-                console.log('erro');
+                vm.errorLogin = true;
             });
         }
 
@@ -130,15 +130,14 @@
                 "Password": vm.password,
                 "Login": vm.login
             };
-            console.log(requestData);
             $http({
-                url: vm.MERCHANT_ENDPOINT,
+                url: BASE_URL + "/merchants/",
                 method: "POST",
                 data: requestData
-
             }).then(function successCallback(response) {
                 //vm.Back();
-                alert('cadastrado com sucesso');
+                console.log(response.data.SuccessBody.Id);
+                $state.go('home', {"Id": response.data.SuccessBody.Id});
             }, function errorCallback(response) {
                 $scope.error = response.statusText;
                 console.log(response);

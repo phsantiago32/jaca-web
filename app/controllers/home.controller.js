@@ -6,16 +6,16 @@
 	    .module('jaca.controllers')
 	  	.controller('HomeController', HomeController);
 
-	  	HomeController.$inject = ['servicoMerchant'];
-		function HomeController(servicoMerchant) {
+	  	HomeController.$inject = ['servicoMerchant', '$stateParams'];
+		function HomeController(servicoMerchant, $stateParams) {
 			var vm = this;
-			
+			vm.MerchantId = $stateParams.Id;
 			getMerchants();
 
 			function getMerchants() {
-	            servicoMerchant.getMerchant('d4698ff5-7513-4b24-84e9-2ed629b6e98b').then(function (res) {
+	            servicoMerchant.getMerchant($stateParams.Id).then(function (res) {
 	                vm.merchantName = res.data.SuccessBody.Name;
-	            });	
-	        }
+	            });
+	        }	        
 		}
 })();

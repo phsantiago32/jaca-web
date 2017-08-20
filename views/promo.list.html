@@ -9,29 +9,12 @@
       <div class="col s12">
         <div class="card stone" ng-repeat="promotion in vm.promotions">
             <div class="card-content stone">
-              <span class="card-title promo-title">Promotion Title</span>
+              <span class="card-title promo-title">{{promotion.Name}}</span>
               <span class="card-title promo-title right-align">19/08/2017</span>
-              <p class="promo-subtitle">Promotion Description</p>
+              <p class="promo-subtitle">{{promotion.Description}}</p>
             </div>
             <div class="card-action right-align" style="padding:5px 25px;">
-              <a ui-sref="home.promo.detail" style="color: #33CC66 !important">Editar</a>
-              <a href="#" style="color: red !important">Excluir</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-          <div class="card stone">
-            <div class="card-content stone">
-              <span class="card-title promo-title">Promotion Title</span>
-              <span class="card-title promo-title right-align">19/08/2017</span>
-              <p class="promo-subtitle">Promotion Description</p>
-            </div>
-            <div class="card-action right-align" style="padding:5px 25px;">
-              <a href="#" style="color: red !important"><i class="material-icons right">delete</i></a></a>
+              <button ng-click="delPromotion(promotion.Id)" class="btn" style="background-color: red !important">Excluir</button>
             </div>
           </div>
         </div>

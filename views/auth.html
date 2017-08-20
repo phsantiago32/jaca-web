@@ -2,9 +2,11 @@
 <div class="col s12 m4 l4"></div>
 <div class="col s12 m4 l4">
     <div id="login-page">
-        <div class=z-depth-1 card-panel" style="padding-bottom: 10px; padding-right: 5px">
+        <div class="z-depth-1 card-panel" style="padding-bottom: 10px; padding-right: 5px">
             <div ng-show="vm.ShouldDisplayLoginForm">
             <h5 class="stone center-align" style="padding-top: 30px; padding-bottom: -10px">Acessar</h5>
+
+             <p ng-show="vm.errorLogin" class="center-align red-text">Usuário inexistente!</p>
                 <form class="login-form animated fadeIn">
                     <div class="row margin">
                         <div class="input-field col s12">
@@ -27,11 +29,8 @@
                         
                     </div>
                     <div class="row">
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a ng-click="RegisterNewUser()">{{vm.footerLeftText}}</a></p>
-                        </div>
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a ng-click="ForgotPassword()">{{vm.footerRightText}}</a></p>
+                        <div class="input-field col s12">
+                            <p class="margin medium-small center-align"><a ng-click="RegisterNewUser()" class="stone">Cadastrar</a></p>
                         </div>
                     </div>
 
