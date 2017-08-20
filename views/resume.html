@@ -1,0 +1,21 @@
+<style>
+	.badge {
+		background-color:#33CC66 !important;
+		color: white !important;
+	}
+</style>
+<div class="row">
+	<div class="col s12">
+		<h5 class="center-align stone">{{vm.title}}</h5>
+		<hr>
+	<br>
+	</div>
+    <div class="col s12">
+    	<div class="card" style="padding: 10px;" ng-repeat="list in vm.list">
+    		<p class="stone center-align" style="padding: 10px;">{{list.PromoName}}</p>
+	        <div class="collection">
+			    <a class="collection-item" style="color: #33CC66 !important" ng-repeat="sales in list.Sales"><span class="badge">{{sales.SaleAmount}}</span>{{sales.CustomerName}}</a>
+			</div>
+		</div>
+	</div>
+</div>

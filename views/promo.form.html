@@ -11,19 +11,19 @@
 	            <form class="login-form">
 	                <div class="row margin">
 	                    <div class="input-field col s12">
-	                        <input id="nome" type="text">
+	                        <input id="nome" type="text" ng-model="vm.name">
 	                        <label for="nome" class="center-align">Título</label>
 	                    </div>
 	                </div>
 	                <div class="row margin">
 	                    <div class="input-field col s12">
-	                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+	                        <textarea id="textarea1" class="materialize-textarea" ng-model="vm.description"></textarea>
           					<label for="textarea1">Descrição</label>
 	                    </div>
 	                </div>
 	                <div class="row ">
 	                    <div class="input-field col s12 center-align">
-	                        <a ng-click="DoLogin()" class="btn waves-effect waves-light">
+	                        <a ng-click="DoPromotion()" class="btn waves-effect waves-light">
 		                        Cadastrar
 	                        <i class="material-icons right">send</i></a>
 	                    </div>	                    

@@ -5,9 +5,12 @@
         .module('jaca')
         .config(config);
 
-        config.$inject = ['$stateProvider', '$urlRouterProvider'];
-        function config($stateProvider, $urlRouterProvider) {
-            
+        config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+        function config($stateProvider, $urlRouterProvider, $locationProvider) {
+            $locationProvider.html5Mode({
+              enabled: true,
+              requireBase: false
+            });
             $urlRouterProvider.otherwise('/');
 
             $stateProvider
@@ -16,14 +19,27 @@
                     url: '/home',
                     templateUrl: 'views/home.html',
                     controller: 'HomeController',
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                    params: {
+                        Id: null
+                    }
+                })
+
+                .state('home.resume', {
+                    url: '/resume',
+                    templateUrl: 'views/resume.html',
+                    controller: 'ResumeController',
+                    controllerAs: 'vm',
                 })
 
                 .state('home.promos', {
                     url: '/promotions',
                     templateUrl: 'views/promo.list.html',
                     controller: 'PromoListController',
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                    params: {
+                        Id: null
+                    }
                 })
 
                 .state('home.promo', {
@@ -41,7 +57,7 @@
                 })
 
                 .state('auth', {
-                    url: '/auth',
+                    url: '/',
                     templateUrl: 'views/auth.html',
                     controller: 'AuthController',
                     controllerAs: 'vm'

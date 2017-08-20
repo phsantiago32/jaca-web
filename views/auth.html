@@ -1,40 +1,36 @@
 <div class="row">
-    <div id="login-page" class="col s6 center-align">
-        <div class="col s12 z-depth-4 card-panel">
+<div class="col s12 m4 l4"></div>
+<div class="col s12 m4 l4">
+    <div id="login-page">
+        <div class="z-depth-1 card-panel" style="padding-bottom: 10px; padding-right: 5px">
             <div ng-show="vm.ShouldDisplayLoginForm">
+            <h5 class="stone center-align" style="padding-top: 30px; padding-bottom: -10px">Acessar</h5>
+
+             <p ng-show="vm.errorLogin" class="center-align red-text">Usuário inexistente!</p>
                 <form class="login-form animated fadeIn">
-                    <div class="row">
-                        <div class="input-field col s12 center">
-                            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-                            <p class="center login-form-text">{{vm.arroz}}</p>
-                        </div>
-                    </div>
                     <div class="row margin">
                         <div class="input-field col s12">
-                            <i class="mdi-social-person-outline prefix"></i>
+                            <i class="material-icons prefix stone">person</i>
                             <input id="username" type="text" ng-model="vm.username">
-                            <label for="username" class="center-align">Username</label>
+                            <label for="username" class="center-align">Login</label>
                         </div>
                     </div>
                     <div class="row margin">
                         <div class="input-field col s12">
-                            <i class="mdi-action-lock-outline prefix"></i>
+                            <i class="material-icons prefix stone">lock</i>
                             <input id="password" type="password" ng-model="vm.password">
-                            <label for="password">Password</label>
+                            <label for="password">Senha</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <a ng-click="DoLogin()" class="btn waves-effect waves-light col s12">Login</a>
+                            <a ng-click="DoLogin()" class="btn waves-effect waves-light col s12">ACESSAR</a>
                         </div>
                         
                     </div>
                     <div class="row">
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a ng-click="RegisterNewUser()">{{vm.footerLeftText}}</a></p>
-                        </div>
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a ng-click="ForgotPassword()">{{vm.footerRightText}}</a></p>
+                        <div class="input-field col s12">
+                            <p class="margin medium-small center-align"><a ng-click="RegisterNewUser()" class="stone">Cadastrar</a></p>
                         </div>
                     </div>
 
@@ -46,15 +42,9 @@
 
             <div ng-show="vm.ShouldDisplayRecoveryPassword">
                 <form class="recoveryPassword-form animated fadeIn">
-                    <div class="row">
-                        <div class="input-field col s12 center">
-                            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-                            <p class="center login-form-text">Recuperar senha</p>
-                        </div>
-                    </div>
                     <div class="row margin">
                         <div class="input-field col s12">
-                            <i class="mdi-social-person-outline prefix"></i>
+                            <i class="material-icons stone prefix">person</i>
                             <input id="useremail" type="text" ng-model="vm.login">
                             <label for="useremail" class="center-align">Login</label>
                         </div>
@@ -80,20 +70,20 @@
                 <form class="register-new-user-form animated fadeIn">
                     <div class="row">
                         <div class="input-field col s12 center">
-                            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-                            <p class="center login-form-text">Criar novo usuário</p>
+                            <h5 class="stone center-align" style="padding-top: 30px; padding-bottom: -10px">Criar Loja</h5>
                         </div>
                     </div>
                     <div class="row margin">
                         <div class="input-field col s12">
-                            <i class="mdi-social-person-outline prefix"></i>
+                            <i class="material-icons stone prefix">work</i>
                             <input id="merchantName" type="text" ng-model="vm.merchantName">
                             <label for="merchantName" class="center-align">Razão Social</label>
                         </div>
                     </div>
                     <div class="row margin">
                         <div class="input-field col s12">
-                            <i class="mdi-social-person-outline prefix"></i>
+                            <i class="material-icons stone prefix">domain</i>
+                            
                             <input id="merchantCep" type="text" ng-model="vm.merchantCep" ng-change="vm.SearchCepWhenHasNineDigits()" maxlength="9">
                             <label for="merchantCep" class="center-align">Cep</label>
                         </div>
@@ -122,7 +112,7 @@
 
                         <div class="row margin" ng-show="vm.ShoudDisplayFullAddress">
                             <div class="input-field col s12">
-                                <i class="mdi-social-person-outline prefix"></i>
+                                <i class="material-icons stone prefix">email</i>
                                 <input id="useremail" type="text" ng-model="vm.userEmail">
                                 <label for="useremail" class="center-align">Email</label>
                             </div>
@@ -130,14 +120,14 @@
 
                         <div class="row margin" ng-show="vm.ShoudDisplayFullAddress">
                             <div class="input-field col s12">
-                                <i class="mdi-social-person-outline prefix"></i>
+                                <i class="material-icons stone prefix">email</i>
                                 <input id="userLogin" type="text" ng-model="vm.login">
                                 <label for="userLogin" class="center-align">Login</label>
                             </div>
                         </div>
 
                         <div class="input-field col s12">
-                            <i class="mdi-social-person-outline prefix"></i>
+                            <i class="material-icons stone prefix">lock</i>
                             <input id="password" type="password" ng-model="vm.password">
                             <label for="password" class="center-align">Senha</label>
                         </div>
@@ -166,4 +156,5 @@
 
         </div>
     </div>
+</div>
 </div>
